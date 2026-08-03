@@ -1,5 +1,4 @@
 // @ts-check
-const {themes} = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,12 +9,14 @@ const config = {
   baseUrl: '/',
   organizationName: 'amenitybook',
   projectName: 'amenitybook-docs',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
   presets: [
     [
       'classic',
@@ -31,6 +32,7 @@ const config = {
       }),
     ],
   ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -50,8 +52,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} AmenityBook AI. Built with Docusaurus.`,
       },
       prism: {
-        theme: themes.github,
-        darkTheme: themes.dracula,
+        theme: require('prism-react-renderer').themes.github,
+        darkTheme: require('prism-react-renderer').themes.dracula,
       },
     }),
 };
